@@ -37,7 +37,7 @@ int print_s(va_list ap)
 	int i;
 
 	s = va_arg(ap, char *);
-	if (s == NULL)
+	if (!s)
 	{
 		s = "(null)";
 	}
@@ -47,3 +47,4 @@ int print_s(va_list ap)
 	}
 	return (i);
 }
+

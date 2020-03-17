@@ -30,12 +30,20 @@ int revision(const char *format, va_list ap, struct op ops[])
 				}
 				if (j == 2 && format[i + 1] != ops[j].p[1])
 				{
-					count += print_principal(format[i]);
+					if (!format[i + 1])
+					{
+						return (-1);
+					}
+					else
+					{
+						count += print_principal(format[i]);
+					}
 				}
 				j++;
 			}
 		}
 		i++;
+		j = 0;
 	}
 	return (count);
 }
