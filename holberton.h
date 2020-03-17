@@ -13,13 +13,13 @@ int _printf(const char *format, ...);
  * @p: possibility
  * @f : function to be used
  */
-typedf struct op
+typedef struct op
 {
 	char *p;
 	int (*f)();
 } checker;
 
-int print_principal(c);
+int print_principal(int c);
 int print_c(va_list ap);
 int print_percentage(void);
 int print_s(va_list ap);
@@ -28,6 +28,7 @@ int print_d_i(va_list ap);
 char *_itoa(int num, char *str, int base);
 void rev_string(char *s);
 
+int revision(const char *format, va_list ap, struct op ops[]);
 
 #endif
 

@@ -10,13 +10,13 @@ int _printf(const char *format, ...)
 	va_list ap;
 	int fn;
 
-	fn = 0;
-
 	checker ops[] = {
 		{"%c", print_c},
 		{"%s", print_s},
 		{"%%", print_percentage}
 	};
+
+	fn = 0;
 
 	if (!format)
 		return (-1);
