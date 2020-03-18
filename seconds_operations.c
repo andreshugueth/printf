@@ -4,7 +4,7 @@
  * @ap: argument
  * Return: i
  */
-int print_d_i(valist ap)
+int print_d_i(va_list ap)
 {
 	int n, i;
 	char *s;
@@ -21,3 +21,4 @@ int print_d_i(valist ap)
 	free(s);
 	return (i);
 }
+
