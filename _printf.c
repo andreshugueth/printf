@@ -15,7 +15,8 @@ int _printf(const char *format, ...)
 		{"%s", print_s},
 		{"%%", print_percentage},
 		{"%d", print_d_i},
-		{"%i", print_d_i}
+		{"%i", print_d_i},
+		{"%b", print_b}
 	};
 
 	fn = 0;
