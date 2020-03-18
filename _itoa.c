@@ -44,4 +44,20 @@ char *_itoa(int num, char *str, int base)
 		neg = 1;
 		num = num * -1;
 	}
+
+	while (num != 0)
+	{
+		rem = num % base;
+		str[i++] = (rem > 9) ? (rem - 10) + 'a' : rem + '0';
+		num = num / base;
+	}
+	if (neg == 1)
+	{
+		str[i++] = '-';
+	}
+	str[i] = '\0';
+
+	rev_string(str);
+
+	return (str);
 }
