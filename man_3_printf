@@ -1,0 +1,24 @@
+.TH man 1 "17 march 2020" "_printf man page"
+.SH NAME
+.B _printf
+- _printf a formatted string to standard output
+.SH SYNOPSIS
+_printf FORMAT [ARGUMENT]...
+.SH DESCRIPTION
+Print ARGUMENT(s) according to FORMAT
+.SH OPTIONS
+.SH The conversion specifier
+.BR c
+The int argument is converted to an unsigned char, then the resulting character is written
+.B %
+ A '%' is written but no argument is converted. The complete version specification is '%%'
+.B r
+Prints a string in reverse.
+B d, i
+The int argument is converted to signed decimal notation.
+.SH SEE ALSO
+.I printf(1)
+.SH
+No known bugs
+.SH AUTHOR
+Andres Huguet, Oscar sanchez
