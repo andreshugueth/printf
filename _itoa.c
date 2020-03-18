@@ -6,7 +6,7 @@
  */
 void rev_string(char *s)
 {
-	int i, j;
+	long int i, j;
 	char temp;
 
 	for (i = 0; s[i] != '\0'; i++)
@@ -27,9 +27,9 @@ void rev_string(char *s)
  * @base:base 10
  * Return: Always 0.
  */
-char *_itoa(int num, char *str, int base)
+char *_itoa(long int num, char *str, int base)
 {
-	int i, rem, neg;
+	long int i, rem, neg;
 
 	i = neg = 0;
 
