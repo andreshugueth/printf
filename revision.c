@@ -20,7 +20,7 @@ int revision(const char *format, va_list ap, struct op ops[])
 		}
 		else if (format[i] == '%')
 		{
-			while (j < 3)
+			while (j < 5)
 			{
 				if (format[i + 1] == ops[j].p[1])
 				{
@@ -28,7 +28,7 @@ int revision(const char *format, va_list ap, struct op ops[])
 					i++;
 					break;
 				}
-				if (j == 2 && format[i + 1] != ops[j].p[1])
+				if (j == 4 && format[i + 1] != ops[j].p[1])
 				{
 					if (!format[i + 1])
 					{

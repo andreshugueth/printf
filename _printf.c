@@ -13,7 +13,9 @@ int _printf(const char *format, ...)
 	checker ops[] = {
 		{"%c", print_c},
 		{"%s", print_s},
-		{"%%", print_percentage}
+		{"%%", print_percentage},
+		{"%d", print_d_i},
+		{"%i", print_d_i}
 	};
 
 	fn = 0;
@@ -28,3 +30,4 @@ int _printf(const char *format, ...)
 	va_end(ap);
 	return (fn);
 }
+
