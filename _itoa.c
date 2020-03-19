@@ -1,10 +1,10 @@
 #include "holberton.h"
 /**
  * _itoa - reverses a string.
- * @str: string
  * @num: numbers
  * @base:base 10
  * Return: Always 0.
+ *
  * https://gist.github.com/narnat/95733cd0ad7bfac0d90697292914c407
  */
 char *_itoa(long int num, int base)
