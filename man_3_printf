@@ -1,4 +1,4 @@
-.TH man 1 "17 march 2020" "_printf man page"
+.TH man 3 "17 march 2020" "_printf man page"
 .SH NAME
 .B _printf
 - _printf a formatted string to standard output
@@ -20,5 +20,47 @@ The int argument is converted to signed decimal notation.
 .I printf(1)
 .SH
 No known bugs
+.RETURN VALUE
+The function returns numbers of printed arguments.
+If the function fails, it returns a negative number
+
+.EXAMPLES
+For this function to work out you need to add:
+#include "holberton.h"
+To print an simple array you need to do the following:
+_printf("Hello World\n"); The response to that function would be "Hello World"
+
+If you want to use an option it would go like the following:
+_printf("Hello %s\n", "World");
+The response would be "Hello World", the %s understand that it need to print a string
+
+If you want to print a character
+_printf("%c\n", 'H');
+The response would be H with a new line.
+
+If you want to print an integrer
+_print("%i\n", 98);
+The reponse would be 98 with a new line
+
+Here is some main function that you can use to print a see how are the responses:
+
+#include "holberton.h"
+
+/**
+ * main - Entry point
+ *
+ * Return: Always 0
+ */
+int main(void)
+{
+	    int len;
+		len = _printf("Let's try to printf a simple sentence.\n");
+		_printf("Length:[%d, %i]\n", len, len);
+		_printf("String:[%s]\n", "I am a string !");
+		_printf("Unknown:[%r]\n");
+		return (0);
+}
+
+
 .SH AUTHOR
 Andres Huguet, Oscar sanchez
