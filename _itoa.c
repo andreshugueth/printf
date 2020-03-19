@@ -1,63 +1,35 @@
 #include "holberton.h"
 /**
- * rev_string - reverses a string.
- * @s: string
- * Return: Always 0.
- */
-void rev_string(char *s)
-{
-	long int i, j;
-	char temp;
-
-	for (i = 0; s[i] != '\0'; i++)
-	{
-	}
-	for (j = 0; j < i / 2; j++)
-	{
-		temp = s[j];
-		s[j] = s[i - j - 1];
-		s[i - j - 1] = temp;
-	}
-
-}
-/**
  * _itoa - reverses a string.
  * @str: string
  * @num: numbers
  * @base:base 10
  * Return: Always 0.
+ * https://gist.github.com/narnat/95733cd0ad7bfac0d90697292914c407
  */
-char *_itoa(long int num, char *str, int base)
+char *_itoa(long int num, int base)
 {
-	long int i, rem, neg;
+	static char *array = "0123456789abcdef";
+	static char buffer[50];
+	char sign = 0;
+	char *ptr;
+	unsigned long n = num;
 
-	i = neg = 0;
-
-	if (num == 0)
+	if (num < 0)
 	{
-		str[i++] = '0';
-		str[i] = '\0';
-		return (str);
+		n = -num;
+		sign = '-';
 	}
-	if (num < 0 && base == 10)
-	{
-		neg = 1;
-		num = num * -1;
-	}
+	ptr = &buffer[49];
+	*ptr = '\0';
 
-	while (num != 0)
-	{
-		rem = num % base;
-		str[i++] = (rem > 9) ? (rem - 10) + 'a' : rem + '0';
-		num = num / base;
-	}
-	if (neg == 1)
-	{
-		str[i++] = '-';
-	}
-	str[i] = '\0';
+	do      {
+		*--ptr = array[n % base];
+		n /= base;
+	} while (n != 0);
 
-	rev_string(str);
-
-	return (str);
+	if (sign)
+		*--ptr = sign;
+	return (ptr);
 }
+

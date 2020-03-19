@@ -10,15 +10,13 @@ int print_d_i(va_list ap)
 	char *s;
 
 	n = va_arg(ap, int);
-	s = malloc(sizeof(char *));
 
-	_itoa(n, s, 10);
+	s = _itoa(n, 10);
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		print_principal(s[i]);
 	}
-	free(s);
 	return (i);
 }
 /**
@@ -32,14 +30,12 @@ int print_b(va_list ap)
 	char *s;
 
 	n = va_arg(ap, int);
-	s = malloc(sizeof(char *));
 
-	_itoa(n, s, 2);
+	s = _itoa(n, 2);
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		print_principal(s[i]);
 	}
-	free(s);
 	return (i);
 }
 

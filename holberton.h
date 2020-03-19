@@ -25,8 +25,12 @@ int print_percentage(void);
 int print_s(va_list ap);
 int print_d_i(va_list ap);
 int print_b(va_list ap);
+int print_u(va_list ap);
+int print_o(va_list ap);
+int print_x(va_list ap);
+int print_X(va_list ap);
 
-char *_itoa(long int num, char *str, int base);
+char *_itoa(long int num, int base);
 void rev_string(char *s);
 
 int revision(const char *format, va_list ap, struct op ops[]);
