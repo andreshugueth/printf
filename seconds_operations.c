@@ -29,7 +29,7 @@ int print_b(va_list ap)
 	long int n, i;
 	char *s;
 
-	n = va_arg(ap, int);
+	n = va_arg(ap, unsigned int);
 
 	s = _itoa(n, 2);
 	for (i = 0; s[i] != '\0'; i++)
